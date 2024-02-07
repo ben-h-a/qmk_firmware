@@ -3,7 +3,7 @@
 
 
 // enum layer_number {
-//   _QWERTY = 0,
+//   _GAMING = 0,
 //   _LOWER,
 //   _RAISE,
 // //   _GAMING,
@@ -24,7 +24,7 @@
 // // |------+------+------+------+------+------|------+      +------|------+------+------+------+------+------|
 // //                      | LALT | LGUI | TT(1)|  ENT |      |  SPC | TT 2 | BSPC | DEL  |
 // //                      +------+------+------|------+      +------+------+------|------+
-// [_QWERTY] = LAYOUT(
+// [_GAMING] = LAYOUT(
 //     KC_ESC,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                                   KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_EQL,
 //     KC_TAB,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                                   KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_MINS,
 //     KC_LSFT,    KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                                   KC_H,       KC_J,       KC_K,       KC_L,       KC_SCLN,    KC_QUOT,
@@ -41,14 +41,14 @@
 // // |------+------+------+------+------+------|------+      +------|------+------+------+------+------+------|
 // // | LCTL |  Z   |  X   |  C   |  V   |  B   | LBRC |      |      |      |      |      |      |      |      |
 // // |------+------+------+------+------+------|------+      +------|------+------+------+------+------+------|
-// //                      | LALT | ENT  |GM_UP |  SPC |      |_QWERTY|QWERTY| BSPC | DEL  |
+// //                      | LALT | ENT  |GM_UP |  SPC |      |_GAMING|QWERTY| BSPC | DEL  |
 // //                      +------+------+------|------+      +------+------+------|------+
 // // [_GAMING] = LAYOUT(
 // //     KC_ESC,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                                   XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
 // //     KC_TAB,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                                   XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
 // //     KC_LSFT,    KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                                   XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
 // //     KC_LCTL,    KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_LBRC,            XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
-// //                                         KC_LALT,    KC_LGUI,    MO(_GAMING_RAISE),   KC_SPC,         DF(_QWERTY),    XXXXXXX,      XXXXXXX,    XXXXXXX
+// //                                         KC_LALT,    KC_LGUI,    MO(_GAMING_RAISE),   KC_SPC,         DF(_GAMING),    XXXXXXX,      XXXXXXX,    XXXXXXX
 // // ),
 
 // // ,-----------------------------------------.                   ,-----------------------------------------.
@@ -136,14 +136,14 @@
 enum layers {
     /* _M_XYZ = Mac Os, _W_XYZ = Win/Linux */
     _COLEMAK,
-    _QWERTY,
+    _GAMING,
     _LOWER,
     _RAISE,
     _ADJUST,
 };
 
 enum custom_keycodes {
-    KC_QWERTY = SAFE_RANGE,
+    KC_GAMING = SAFE_RANGE,
     KC_COLEMAK,
     KC_PRVWD,
     KC_NXTWD,
@@ -170,7 +170,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //  *            `----------------------------------'           '------''---------------------------'
 //  */
 
-// [_QWERTY] = LAYOUT(
+// [_GAMING] = LAYOUT(
 //   KC_GRV,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_GRV,
 //   KC_ESC,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_BSPC,
 //   KC_TAB,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_QUOT,
@@ -188,12 +188,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |------+------+------+------+------+------|------+      +------|------+------+------+------+------+------|
 //                      | LALT | LGUI | TT(1)|  ENT |      |  SPC | TT 2 | BSPC | DEL  |
 //                      +------+------+------|------+      +------+------+------|------+
-[_QWERTY] = LAYOUT(
+[_GAMING] = LAYOUT(
     KC_ESC,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                                   KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_EQL,
     KC_TAB,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                                   KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_MINS,
     KC_LSFT,    KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                                   KC_H,       KC_J,       KC_K,       KC_L,       KC_SCLN,    KC_QUOT,
-    KC_LCTL,    KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_LBRC,        KC_RBRC,    KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_GRV,
-                                        KC_LALT,    KC_LGUI,    TT(_LOWER),   KC_ENT,         KC_SPC,     TT(_RAISE),      KC_BSPC,    KC_DEL
+    KC_LCTL,    KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_ENT,        KC_RBRC,    KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_GRV,
+                                        KC_LALT,    KC_LGUI,    TT(_LOWER),   KC_SPC,         KC_SPC,     TT(_RAISE),      KC_BSPC,    KC_DEL
 ),
 /*
  * COLEMAK
@@ -321,7 +321,7 @@ KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,_______,          _______,KC_NO,  
  */
  [_ADJUST] = LAYOUT(
   XXXXXXX , XXXXXXX,  XXXXXXX ,  XXXXXXX , XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  QK_BOOT  , XXXXXXX,KC_QWERTY,KC_COLEMAK,CG_TOGG,XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  QK_BOOT  , XXXXXXX,KC_GAMING,KC_COLEMAK,CG_TOGG,XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX , XXXXXXX,CG_TOGG, XXXXXXX,    XXXXXXX,  XXXXXXX,                     XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
   XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,  XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,
                     _______, _______, _______, _______,     _______, _______, _______, _______
@@ -366,8 +366,8 @@ static void print_status_narrow(void) {
     }
 
     switch (get_highest_layer(default_layer_state)) {
-        case _QWERTY:
-            oled_write_ln_P(PSTR("Qwrt"), false);
+        case _GAMING:
+            oled_write_ln_P(PSTR("Gmng"), false);
             break;
         case _COLEMAK:
             oled_write_ln_P(PSTR("Clmk"), false);
@@ -380,7 +380,7 @@ static void print_status_narrow(void) {
     oled_write_ln_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
         case _COLEMAK:
-        case _QWERTY:
+        case _GAMING:
             oled_write_P(PSTR("Base\n"), false);
             break;
         case _RAISE:
@@ -413,9 +413,9 @@ bool oled_task_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case KC_QWERTY:
+        case KC_GAMING:
             if (record->event.pressed) {
-                set_single_persistent_default_layer(_QWERTY);
+                set_single_persistent_default_layer(_GAMING);
             }
             return false;
         case KC_COLEMAK:
